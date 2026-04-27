@@ -1,25 +1,25 @@
 # Exercise 0: Deploy the lab resources
 
-1. [] Log into the lab desktop using **LabUser** and +++@lab.VirtualMachine(Win11-Pro-Base).Password+++.
+1. Log into the lab desktop using **LabUser** and +++@lab.VirtualMachine(Win11-Pro-Base).Password+++.
 
-1. [] From the lab VM's taskbar, launch **PowerShell**.
+1. From the lab VM's taskbar, launch **PowerShell**.
 
   ![2nbm7qmn.png](Media/2nbm7qmn.png)
 
-1. [] In PowerShell, run the following command:
+1. In PowerShell, run the following command:
 
 	`az login`
 
-1. [] When prompted, login using the following credentials:
+1. When prompted, login using the following credentials:
     
   | Object | Valua |
   | -------- | -------- |
   | Email | `@lab.CloudPortalCredential(User1).Username` |
   | TAP | `@lab.CloudPortalCredential(User1).AccessToken` |
 
-1. [] Close Microsoft Edge and return to the PowerShell window.
+1. Close Microsoft Edge and return to the PowerShell window.
 
-1. [] In the PowerShell windows execute the following command:
+1. In the PowerShell windows execute the following command:
 
 	`Set-Location "C:\Lab Assets\deploy"; powershell.exe -ExecutionPolicy Bypass -File ".\setup.ps1"`
 
@@ -46,16 +46,16 @@ Using a web browser of your choice, please navigate to this Microsoft Fabric lin
 ### Task 1.1: User login to Microsoft Fabric
 Using a web browser of your choice, please navigate to this Microsoft Fabric link.
 
-1. [] In Microsoft Edge, connect to `app.fabric.microsoft.com`  
+1. In Microsoft Edge, connect to `app.fabric.microsoft.com`  
 
-1. [] At the Fabric login screen, enter the following information:
+1. At the Fabric login screen, enter the following information:
 
     | Object | Value |
     | -------- | -------- |
     | Email | `@lab.CloudPortalCredential(User1).Username` |
     | TAP | `@lab.CloudPortalCredential(User1).AccessToken` |
 
-1. [] If prompted with "Stay signed in?" select **Yes** and proceed.
+1. If prompted with "Stay signed in?" select **Yes** and proceed.
 
     >[!Note] If you receive a message that **You've selected Microsoft Fabric free**, select **Continue**.
 ![2m04cjde.png](Media/2m04cjde.png)
@@ -65,45 +65,45 @@ At the Fabric free, create your account pages, enter any information and select 
 
 ### Task 1.2: Set up a Fabric workspace with proper capacity 
 
-1. [] You should be able to find a New Workspace tile near the top-left area of the screen. Select it to open the Create a workspace blade on the right side.
+1. You should be able to find a New Workspace tile near the top-left area of the screen. Select it to open the Create a workspace blade on the right side.
    
    ![8g82u4mq.png](Media/8g82u4mq.png)
 
-1. [] In the Create a workspace blade, enter `workspace@lab.LabInstance.Id` in the Name field.
+1. In the Create a workspace blade, enter `workspace@lab.LabInstance.Id` in the Name field.
    
    ![bysvn2ik.png](Media/bysvn2ik.png)
 	>[!Note] You can safely ignore any messages about **PREMIUM CAPACITY SETTINGS**
 
-1. [] Select Advanced and scroll down to see the License mode. Ensure that **Fabric** is selected.
+1. Select Advanced and scroll down to see the License mode. Ensure that **Fabric** is selected.
 
 	![k1mwhjcz.png](Media/k1mwhjcz.png)
     
-1. [] Next, select the green **Apply** button at the bottom left of the Create a workspace blade.
+1. Next, select the green **Apply** button at the bottom left of the Create a workspace blade.
    
    ![gse1xrsm.png](Media/gse1xrsm.png)
 
-1. [] On the following page, you may get a pop-up titled "Introducing task flows (preview)". Select the green **Got it** button.
+1. On the following page, you may get a pop-up titled "Introducing task flows (preview)". Select the green **Got it** button.
    
    ![hth7guac.png](Media/hth7guac.png)
 
 ### Task 1.3: Building a Lakehouse for Foundry IQ
 In this task of the workshop, you will be creating a Lakehouse.
 
-1. [] Select the Workspaces option and choose the **workspace@lab.LabInstance.Id** workspace.
+1. Select the Workspaces option and choose the **workspace@lab.LabInstance.Id** workspace.
 
     ![4htf5lv3.png](Media/4htf5lv3.png)
    
-1. [] Select **+ New item** and select `Lakehouse` from the available options.
+1. Select **+ New item** and select `Lakehouse` from the available options.
 
-1. [] In the **New Lakehouse** dialog box, Enter `Retail_Lakehouse_@lab.LabInstance.Id` for the Name, and Ensure the **Lakehouse schemas** option is enabled
+1. In the **New Lakehouse** dialog box, Enter `Retail_Lakehouse_@lab.LabInstance.Id` for the Name, and Ensure the **Lakehouse schemas** option is enabled
 
-1. [] Select **Create**.
+1. Select **Create**.
 
     ![LakehouseName.png](Media/LakehouseName.png)
 
     >[!Note] Wait for the Lakehouse to be successfully provisioned.Once created, the Lakehouse will open automatically.
 
-1. [] Verify the following components are available:
+1. Verify the following components are available:
    - **Tables** section
    - **Files** section
 
@@ -111,59 +111,59 @@ In this task of the workshop, you will be creating a Lakehouse.
 
     >[!Note] Both Tables and Files section is empty.
 
-1. [] To upload files, select **...** in Files section. Mouseover the **Upload** option and select **Upload files** option.
+1. To upload files, select **...** in Files section. Mouseover the **Upload** option and select **Upload files** option.
 
     ![FileSelection.png](Media/FileSelection.png)
 
-1. [] **Select** folder icon at right side to open and choose file path.
+1. **Select** folder icon at right side to open and choose file path.
 
     ![ClickFolder.png](Media/ClickFolder.png)
 
-1. [] To browse the files from your virtual machine, open File Explorer. Select the address bar, type the path `C:\FabricIQLab\Ontology`.
+1. To browse the files from your virtual machine, open File Explorer. Select the address bar, type the path `C:\FabricIQLab\Ontology`.
 
     ![qkfipn1a.png](Media/qkfipn1a.png)
 
-1. [] Select all files from this folder and select **Upload**
+1. Select all files from this folder and select **Upload**
     - **retail_ontology_package.iq** 
     - **fabriciq_ontology_accelerator-0.1.0-py3-none-any.whl**
     - **Zava Black Friday Return Policy**
 
     ![SelectAllFiles.png](Media/SelectAllFiles.png)
    
-1. [] Close the upload window once these files have been uploaded.
+1. Close the upload window once these files have been uploaded.
 
     ![CurrentUploads.png](Media/CurrentUploads.png)
 
-1. [] Now, the **Files** section of the Lakehosue has all three files. 
+1. Now, the **Files** section of the Lakehosue has all three files. 
 
     ![LakehouseWithFiles.png](Media/LakehouseWithFiles.png)
 
 ### Task 1.4: Loading data into Lakehouse
 #### Step 1: Import notebook 
-1. [] Navigate to your **Fabric workspace**.
+1. Navigate to your **Fabric workspace**.
 
-1. [] On the workspace homepage, select the **Import** option.
+1. On the workspace homepage, select the **Import** option.
 
-1. [] From the available options, select **Notebook**. 
+1. From the available options, select **Notebook**. 
 
-1. [] Choose **From this computer** as the source.
+1. Choose **From this computer** as the source.
 
     ![Notebookimport.png](Media/Notebookimport.png) 
 
-1. [] Select **Upload** to import the notebook.
+1. Select **Upload** to import the notebook.
 
     ![UploadNotebook.png](Media/UploadNotebook.png) 
 
-1. [] To browse the notebooks from your virtual machine, open File Explorer. Select the address bar, type the path `C:\FabricIQLab\Notebooks`, then select the **Generate Lakehouse Data** notebook file and select the **Open** button.
+1. To browse the notebooks from your virtual machine, open File Explorer. Select the address bar, type the path `C:\FabricIQLab\Notebooks`, then select the **Generate Lakehouse Data** notebook file and select the **Open** button.
 
      ![NBimport.png](Media/NBimport.png) 
 
-1. [] After upload, notebook will be listed in the workspace area.
+1. After upload, notebook will be listed in the workspace area.
 
     ![NotebookList.png](Media/NotebookList.png) 
 
 #### Step 2: Execute notebook
-1. [] Select **Generate Lakehouse Data** notebook from the list.
+1. Select **Generate Lakehouse Data** notebook from the list.
   
     ![NBdirection.png](Media/NBdirection.png)
 
@@ -171,11 +171,11 @@ In this task of the workshop, you will be creating a Lakehouse.
 
   	![NotebookwithoutLakehouse.png](Media/NotebookwithoutLakehouse.png) 
 
-1. [] Select **Add data items** and select **From OneLake catalog** to open OneLake ares.
+1. Select **Add data items** and select **From OneLake catalog** to open OneLake ares.
 
     ![ChooseOneLake.png](Media/ChooseOneLake.png) 
 
-1. [] Select **Retail_Lakehouse_@lab.LabInstance.Id**, and then select **Add** to include in the notebook execution.
+1. Select **Retail_Lakehouse_@lab.LabInstance.Id**, and then select **Add** to include in the notebook execution.
 
     ![LakehouseSelection.png](Media/LakehouseSelection.png) 
 
@@ -185,53 +185,53 @@ In this task of the workshop, you will be creating a Lakehouse.
 
     >Now, we are good to run this notebook.
 
-1. [] select **Run all** button at top banner and execute entire notebook cell by cell.
+1. select **Run all** button at top banner and execute entire notebook cell by cell.
     - First cell will install .whl file to execute all refrerenced files.
     - Second cell will execute ontology package and load data in the Lakehouse
 
         ![LakehouseDataCreation.png](Media/LakehouseDataCreation.png) 
       
-1. [] Wait for the execution to complete successfully.
+1. Wait for the execution to complete successfully.
 
-1. [] Navigate to the Lakehouse that was created earlier and verify that the data is successfully loaded. 
+1. Navigate to the Lakehouse that was created earlier and verify that the data is successfully loaded. 
 
     ![LHnavigation.png](Media/LHnavigation.png) 
 
-1. [] Go to the **Tables** section
+1. Go to the **Tables** section
    and Select the three dots (⋯) menu and select **Refresh** to load all table under **dbo** schema.
 
     ![tablerefresh.png](Media/tablerefresh.png) 
 
-1. [] Verify that Tables are created automatically
+1. Verify that Tables are created automatically
     
     ![LakehouseData.png](Media/LakehouseData.png) 
 
 ### Task 1.5: Create a data agent with a Lakehouse as the data source
 In this task, a **Data Agent** will be created in Fabric workspace and linked with **Lakehouse** data source.
 
-1. [] Navigate to your **Fabric Workspace**.
+1. Navigate to your **Fabric Workspace**.
 
-1. [] In your Fabric workspace, select the **New item** button in the top command bar.
+1. In your Fabric workspace, select the **New item** button in the top command bar.
 
-1. [] In the **New item** creation pane, use the search bar to type `Data Agent`.
+1. In the **New item** creation pane, use the search bar to type `Data Agent`.
 
-1. [] Select the **Data Agent** card in the search results and select it to initiate creation.
+1. Select the **Data Agent** card in the search results and select it to initiate creation.
 
      ![DAnavigation.png](Media/DAnavigation.png)
 
-1. [] in the Input a data agent name field, enter `Retail_DataAgent_@lab.LabInstance.Id`, and select the **Create** button.
+1. in the Input a data agent name field, enter `Retail_DataAgent_@lab.LabInstance.Id`, and select the **Create** button.
 
      ![FoundryDataAgent.png](Media/FoundryDataAgent.png)
 
-1. [] Once the Data Agent opens, navigate to the **Data** tab in the Explorer pane, select **Add Data**, select **Data source**.
+1. Once the Data Agent opens, navigate to the **Data** tab in the Explorer pane, select **Add Data**, select **Data source**.
 
     ![datasource.png](Media/datasource.png)
 
-1. [] select the **Retail_Lakehouse_@lab.LabInstance.Id** Lakehouse, then select **Add** and verify that the Lakehouse is successfully attached.
+1. select the **Retail_Lakehouse_@lab.LabInstance.Id** Lakehouse, then select **Add** and verify that the Lakehouse is successfully attached.
 
     ![FoundryDataAgentLakehouse.png](Media/FoundryDataAgentLakehouse.png)
 
-1. [] Expand **Retail_Lakehouse → schemas → dbo → Tables** and select all tables (carriers, customers, demand_signals, forecasts, inventories, order_lines, orders, product_categories, products, promotions, regions, returns, shipments, stores, warehouses).
+1. Expand **Retail_Lakehouse → schemas → dbo → Tables** and select all tables (carriers, customers, demand_signals, forecasts, inventories, order_lines, orders, product_categories, products, promotions, regions, returns, shipments, stores, warehouses).
 
      ![LHselection.png](Media/LHselection.png)
 
@@ -239,11 +239,11 @@ In this task, a **Data Agent** will be created in Fabric workspace and linked wi
 
 ## Task 1.6: Validate the data agent using natural language queries
     
-1. [] Select **Agent instructions** from the top menu.
+1. Select **Agent instructions** from the top menu.
 
      ![AgentInstructionForFoundry.png](Media/AgentInstructionForFoundry.png) 
 
-1. [] In the **Agent instructions** section, remove any existing default content present in the instruction box, provide guidance to control how the agent responds by entering instructions. 
+1. In the **Agent instructions** section, remove any existing default content present in the instruction box, provide guidance to control how the agent responds by entering instructions. 
 
      
     ### Sample Agent Instructions (Copy & Paste)
@@ -329,33 +329,33 @@ In this task, a **Data Agent** will be created in Fabric workspace and linked wi
      - Avoid overly technical or database-specific language
      ```
 
-1. [] After entering the instructions, select **Publish** to save the configuration.
+1. After entering the instructions, select **Publish** to save the configuration.
 
     ![agentpublish.png](Media/agentpublish.png)
 
-1. [] On the Publish data agent popup, select **Publish**
+1. On the Publish data agent popup, select **Publish**
 
-1. [] After adding the instructions, select the **close (✕) icon** on the **Agent instructions** tab to exit the window.
+1. After adding the instructions, select the **close (✕) icon** on the **Agent instructions** tab to exit the window.
 
      ![agentclosing.png](Media/agentclosing.png)
 
-1. [] Once closed, the main Data Agent interface will be displayed, where you can start querying the agent using natural language.
+1. Once closed, the main Data Agent interface will be displayed, where you can start querying the agent using natural language.
 
-1. [] In the query input area, ask questions using natural language, for example:
+1. In the query input area, ask questions using natural language, for example:
 
     ````
     Which regions are underperforming in sales?
     ````
-1. [] Submit the query and review the response generated by the Data Agent.
+1. Submit the query and review the response generated by the Data Agent.
 
      ![agentresponse1.png](Media/agentresponse1.png)
 
-1. [] Observe how the agent:
+1. Observe how the agent:
    - Interprets the question  
    - Queries the underlying data using the ontology  
    - Provides insights in a readable format  
 
-1. [] Try multiple queries and refine your questions to explore additional insights.
+1. Try multiple queries and refine your questions to explore additional insights.
 
      ```
      - Which products are frequently returned and impacting revenue?
@@ -373,68 +373,68 @@ These setting are required for later exercises to function correctly.
 
 ### Configure AI Search service permissions
 
-1. [] Open a new browser tab and connect to `portal.azure.com`.
+1. Open a new browser tab and connect to `portal.azure.com`.
 
-1. [] If prompted for credentials, enter the following information:
+1. If prompted for credentials, enter the following information:
 
     | Object | Value |
     | -------- | -------- |
     | User | `@lab.CloudPortalCredential(User1).Username` |
     | TAP | `@lab.CloudPortalCredential(User1).AccessToken` |
 
-1. [] Select **Resource groups**, and then select **RG1**.
+1. Select **Resource groups**, and then select **RG1**.
 
-1. [] Select **srch-foundry-iq-lab-@lab.LabInstance.Id** (Search service).
+1. Select **srch-foundry-iq-lab-@lab.LabInstance.Id** (Search service).
 
-1. [] In the left panel, expand **Settings**, and then select **Identity**.
+1. In the left panel, expand **Settings**, and then select **Identity**.
 
-1. [] Set the Status to **On**, and then select **Save**
+1. Set the Status to **On**, and then select **Save**
 
 	![1gadsiuz.png](Media/1gadsiuz.png)
 
-1. [] Select **Yes** to confirm.
+1. Select **Yes** to confirm.
 
 <!-- ### Configure Foundry Permissions
 
-1. [] Use the breadcrumbs menu at the top of the screen to return to the **RG1** Resource group.
+1. Use the breadcrumbs menu at the top of the screen to return to the **RG1** Resource group.
 
-1. [] Select **foundry-iq-lab-@lab.LabInstance.Id**
+1. Select **foundry-iq-lab-@lab.LabInstance.Id**
 
-1. [] On the left menu select **Access control (IAM)**.
+1. On the left menu select **Access control (IAM)**.
 
-1. [] Select **+ Add** > **Add role assignment**.
+1. Select **+ Add** > **Add role assignment**.
 
-1. [] On the Role tab, search for `Azure AI User`.
+1. On the Role tab, search for `Azure AI User`.
 
-1. [] Select **Azure AI User**, then select **Next**.
+1. Select **Azure AI User**, then select **Next**.
 
-1. [] On the Members tab, choose **User, group, or service principal**.
+1. On the Members tab, choose **User, group, or service principal**.
 
-1. [] Select **+ Select members**.
+1. Select **+ Select members**.
 
-1. [] Search for `@lab.CloudPortalCredential(User1).Username`.
+1. Search for `@lab.CloudPortalCredential(User1).Username`.
 
-1. [] **Select the account**, then choose **Select**.
+1. **Select the account**, then choose **Select**.
 
-1. [] Select **Review + assign** twice. -->
+1. Select **Review + assign** twice. -->
 
 ### Configure Workspace permissions
 
-1. [] Return to the **Fabric browser tab**.
+1. Return to the **Fabric browser tab**.
 
-1. [] Navigate to your **Fabric Workspace**.
+1. Navigate to your **Fabric Workspace**.
 
-1. [] In the upper right, select **Manage access**.
+1. In the upper right, select **Manage access**.
 
 	![yjzz3r16.png](Media/yjzz3r16.png)
 
-1. [] On the Manage access flyout, select **+ Add people or groups**.
+1. On the Manage access flyout, select **+ Add people or groups**.
 
 	![txb80l84.png](Media/txb80l84.png)
 
-1. [] Enter the name of your AI Search service `srch-foundry-iq-lab-@lab.LabInstance.Id`
+1. Enter the name of your AI Search service `srch-foundry-iq-lab-@lab.LabInstance.Id`
 
-1. [] In the dropdown below, select **Contributor**, and then select **Add**.
+1. In the dropdown below, select **Contributor**, and then select **Add**.
 
     ![3y9af9gc.png](Media/3y9af9gc.png)
 
@@ -461,28 +461,28 @@ Miguel provisions the following core components within Microsoft Foundry:
 
 ### Task 2.1: Provision a Foundry Hub and Project 
 
-1. [] In Microsoft Edge, navigate to the `https://portal.azure.com`.
+1. In Microsoft Edge, navigate to the `https://portal.azure.com`.
 
-1. [] In the Azure Portal, search **resource groups** and select Resource groups.
+1. In the Azure Portal, search **resource groups** and select Resource groups.
     ![image1.png](Media/image1.png)
 
-1. [] Select the **RG1** resource group.
+1. Select the **RG1** resource group.
 
     ![image2.png](Media/image2.png)
 
-1. [] Select **foundry-iq-lab-@lab.LabInstance.Id**.
+1. Select **foundry-iq-lab-@lab.LabInstance.Id**.
 
     ![image3.png](Media/image3.png)
 
-1. [] Select **Go to Foundry portal** to navigate to the Foundry project.
+1. Select **Go to Foundry portal** to navigate to the Foundry project.
 
     ![image6.png](Media/image6.png)
 
-1. [] Ensure that **New Foundry** is toggled **on** at the top of the menu bar 
+1. Ensure that **New Foundry** is toggled **on** at the top of the menu bar 
 
   ![image7.png](Media/image7.png)
 
-1. [] Select **Build** to create agents, deploy models, and build workflows.
+1. Select **Build** to create agents, deploy models, and build workflows.
 
     >[!Alert] If you do not see the Build option, ensure New Foundry is toggled on,
 
@@ -490,35 +490,35 @@ Miguel provisions the following core components within Microsoft Foundry:
 
 In this task, you will deploy a reasoning model and an embedding model in Foundry.
 
-1. [] On the Microsoft Foundry page, select **Models**, then select **Deploy base models**.
+1. On the Microsoft Foundry page, select **Models**, then select **Deploy base models**.
 
     ![image8.png](Media/image8.png)
 
-1. [] Search for `gpt-4o` then select **gpt-4o**.
+1. Search for `gpt-4o` then select **gpt-4o**.
 
     ![image9.png](Media/image9.png)
 
-1. [] Select the **Deploy** dropdown and select **Default settings**.
+1. Select the **Deploy** dropdown and select **Default settings**.
 
     ![image11.png](Media/image11.png)
 
-1. [] Once the model is deployed, open the model **playground**.
+1. Once the model is deployed, open the model **playground**.
    
    ![image97.png](Media/image97.png)
 
-1. [] Select **Details** tab to view the **key**, **endpoint**, and **other model information**.
+1. Select **Details** tab to view the **key**, **endpoint**, and **other model information**.
 
    ![image98.png](Media/image98.png)
 
-1. [] Again navigate to **Models** section to deploy embedding model, then select **Deploy base models**.
+1. Again navigate to **Models** section to deploy embedding model, then select **Deploy base models**.
 
     ![image8.png](Media/image8.png)
 
-1. [] Search `text-embedding-ada-002` then select **text-embedding-ada-002**.
+1. Search `text-embedding-ada-002` then select **text-embedding-ada-002**.
 
     ![image12.png](Media/image12.png)
 
-1. [] Select the **Deploy** dropdown and select **Default settings**.
+1. Select the **Deploy** dropdown and select **Default settings**.
 
     ![image13.png](Media/image13.png)
 
@@ -551,25 +551,25 @@ To enable accurate and context-aware responses, Miguel integrates enterprise con
 
 ### Task 3.1: Set up indexed sources for unstructured files and federated sources for real-time structured data retrieval. 
 
-1. [] On the left side, select **Knowledge** to configure Foundry IQ.
+1. On the left side, select **Knowledge** to configure Foundry IQ.
 
     ![image14.png](Media/image14.png)
 
-1. [] On the dropdown below Azure AI Search resource, and select **srch-foundry-iq-lab-@lab.LabInstance.Id**.
+1. On the dropdown below Azure AI Search resource, and select **srch-foundry-iq-lab-@lab.LabInstance.Id**.
 
     ![image16.png](Media/image16.png)
 
-1. [] In the Auth Type dropdown that appears, select **API Key**, and then select **Connect**.
+1. In the Auth Type dropdown that appears, select **API Key**, and then select **Connect**.
 
-1. [] Select **Create a knowledge base**.
+1. Select **Create a knowledge base**.
 
     ![image17.png](Media/image17.png)
 
-1. [] Select **Azure Blob Storage** to index unstructured return policy files, then select **Connect**.
+1. Select **Azure Blob Storage** to index unstructured return policy files, then select **Connect**.
 
     ![image18.png](Media/image18.png)
 
-1. [] On the Create a knowledge source popup, enter the following information:
+1. On the Create a knowledge source popup, enter the following information:
 
 
   | Option | Value |
@@ -580,33 +580,33 @@ To enable accurate and context-aware responses, Miguel integrates enterprise con
   | Authentication type | **API Key** |
   | Embedding model | **text-embedding-ada-002-1** |
 
-1. [] Select **Create**.
+1. Select **Create**.
 
-1. [] In the same **Knowledge base** page, in the **Knowledge source** section, select **Create new** and then select **Azure AI Search Index**.
+1. In the same **Knowledge base** page, in the **Knowledge source** section, select **Create new** and then select **Azure AI Search Index**.
 
     ![image23.png](Media/image23.png)
 
-1. [] Enter `product-catalog` in the Name field. 
+1. Enter `product-catalog` in the Name field. 
 
-1. [] In the Select search service dropdown, select **product-catalog-index**, then select **Create**.
+1. In the Select search service dropdown, select **product-catalog-index**, then select **Create**.
 
     ![image24.png](Media/image24.png)
 
 ### Task 3.2: Connect to a Microsoft Fabric Lakehouse to enable direct access to enterprise data
 
-1. [] On the same **Knowledge base** page, in the **Knowledge source** section, select **Create new** and then select **Microsoft OneLake** to connect Lakehouse to enable direct access to enterprise data without the need for data movement.
+1. On the same **Knowledge base** page, in the **Knowledge source** section, select **Create new** and then select **Microsoft OneLake** to connect Lakehouse to enable direct access to enterprise data without the need for data movement.
 
     ![image93.png](Media/image93.png)
 
-1. [] For the name enter `return-policy`.
+1. For the name enter `return-policy`.
 
-1. [] A the bottom of the window, select the **Retal_Lakehouse_@lab.LabInstance.Id**, and then select **Create**.
+1. A the bottom of the window, select the **Retal_Lakehouse_@lab.LabInstance.Id**, and then select **Create**.
 
-1. [] At the top of the Basic configuration page, in the Name field, enter `foundry-lab-knowledgebase`
+1. At the top of the Basic configuration page, in the Name field, enter `foundry-lab-knowledgebase`
 
-1. [] For the **Chat completion model** field, select **gpt-4o**.
+1. For the **Chat completion model** field, select **gpt-4o**.
 
-1. [] Review all the **Knowledge sources**, and then select **Save knowledge base**.
+1. Review all the **Knowledge sources**, and then select **Save knowledge base**.
 
     ![image96.png](Media/image96.png)
 
@@ -637,25 +637,25 @@ Miguel creates a **Supervisor Agent** capable of orchestrating insights across e
 
 ### Task 4.1: Create agent persona and system instructions
 
-1. [] On the Microsoft Foundry page, on the left side, select **Agents**.
+1. On the Microsoft Foundry page, on the left side, select **Agents**.
 
     ![image32.png](Media/image32.png)
 
-1. [] Select **Create agent**. 
+1. Select **Create agent**. 
 
     ![image33.png](Media/image33.png)
 
-1. [] Enter `Supervisor-Agent` as Agent name, then select **Create**.
+1. Enter `Supervisor-Agent` as Agent name, then select **Create**.
 
     ![image34.png](Media/image34.png)
 
-1. [] Once the agent is created, you will be redirected to the agent playground page. From the Model dropdown, select **gpt-4o**  and paste the following instructions in the **Instructions** section
+1. Once the agent is created, you will be redirected to the agent playground page. From the Model dropdown, select **gpt-4o**  and paste the following instructions in the **Instructions** section
 
     ```
     You are the Supervisor Agent responsible for routing user queries to the appropriate specialized agent. Analyze the user's request and determine which agent should handle it. Based on the intent of the query, call the relevant agent listed below.
 
     Agent Routing Rules
-    1. [] Sales-Associate-Agent
+    1. Sales-Associate-Agent
     •	Call this agent when the user asks about:
           o	Product recommendations
           o	DIY project guidance
@@ -663,14 +663,14 @@ Miguel creates a **Supervisor Agent** capable of orchestrating insights across e
           o	Product features or comparisons
           o	Requests to visualize designs or generate images
           o	Upselling or discovering suitable products
-    1. [] Rewards-Campaign-Agent
+    1. Rewards-Campaign-Agent
     •	Call this agent when the user asks about:
           o	Loyalty programs or reward points
           o	Promotional campaigns
           o	Discount offers or eligibility
           o	Black Friday or seasonal promotions
           o	Customer-specific discounts or campaign details
-    1. [] Inventory-Agent
+    1. Inventory-Agent
     •	Call this agent when the user asks about:
           o	Product availability
           o	Inventory levels
@@ -687,19 +687,19 @@ Miguel creates a **Supervisor Agent** capable of orchestrating insights across e
 
   ![image35.png](Media/image35.png)
 
-1. [] Select **Save**, then select the back arrow (**⬅**) to create additional Agents.
+1. Select **Save**, then select the back arrow (**⬅**) to create additional Agents.
 
   ![image36.png](Media/image36.png)
 
-1. [] Select **Create agent**.
+1. Select **Create agent**.
 
   ![image37.png](Media/image37.png)
 
-1. [] Paste `Sales-Associate-Agent` as Agent name and then select **Create**.
+1. Paste `Sales-Associate-Agent` as Agent name and then select **Create**.
 
   ![image38.png](Media/image38.png)
 
-1. [] Once the agent is created, you will be redirected to the playground page of the agent. From the Model drop-down, select **gpt-4o** and paste below following instructions in the **Instructions** section.
+1. Once the agent is created, you will be redirected to the playground page of the agent. From the Model drop-down, select **gpt-4o** and paste below following instructions in the **Instructions** section.
 
     ```
     Interior Design Agent Guidelines
@@ -745,19 +745,19 @@ Miguel creates a **Supervisor Agent** capable of orchestrating insights across e
 
   ![image39.png](Media/image39.png)
 
-1. [] Select **Save**, then select the back arrow  (**⬅**) to create additional Agents.
+1. Select **Save**, then select the back arrow  (**⬅**) to create additional Agents.
 
   ![image40.png](Media/image40.png)
 
-1. [] Select **Create agent**.
+1. Select **Create agent**.
 
   ![image37.png](Media/image37.png)
 
-1. [] Paste `Rewards-Campaign-Agent` as Agent name and then select **Create**.
+1. Paste `Rewards-Campaign-Agent` as Agent name and then select **Create**.
 
   ![image41.png](Media/image41.png)
 
-1. [] Select **gpt-4o** from the drop down and paste below following instructions in the **Instructions** section.
+1. Select **gpt-4o** from the drop down and paste below following instructions in the **Instructions** section.
 
     ```
     Apply personalized discounts to customers based on their loyalty information and explain the applicable Black Friday promotional tiers using the provided knowledge sources.
@@ -783,19 +783,19 @@ Miguel creates a **Supervisor Agent** capable of orchestrating insights across e
 
   ![image42.png](Media/image42.png)
 
-1. [] Select **Save** and then select the back arrow (**⬅**) to create the next Agent.
+1. Select **Save** and then select the back arrow (**⬅**) to create the next Agent.
 
   ![image43.png](Media/image43.png)
 
-1. [] Select **Create agent**.
+1. Select **Create agent**.
 
   ![image37.png](Media/image37.png)
 
-1. [] Paste `Inventory-Agent` as Agent name and then select **Create**.
+1. Paste `Inventory-Agent` as Agent name and then select **Create**.
 
   ![image45.png](Media/image45.png)
 
-1. [] Select **gpt-4o** from the drop down and paste below following instructions in the **Instructions** section.
+1. Select **gpt-4o** from the drop down and paste below following instructions in the **Instructions** section.
 
     ```
     You are Inventory check agent,
@@ -809,45 +809,45 @@ Miguel creates a **Supervisor Agent** capable of orchestrating insights across e
 
   ![image46.png](Media/image46.png)
 
-1. [] Select **Save** and then select the back arrow (**⬅**) to return.
+1. Select **Save** and then select the back arrow (**⬅**) to return.
 
   ![image47.png](Media/image47.png)
 
 ### Task 4.2: Attach configured knowledge sources to the agent
 
-1. [] Select **Rewards-Campaign-Agent**.
+1. Select **Rewards-Campaign-Agent**.
 
   ![image48.png](Media/image48.png)
 
-1. [] Select **Add** from the **Knowledge** dropdown, then select **Connect to Foundry IQ**.
+1. Select **Add** from the **Knowledge** dropdown, then select **Connect to Foundry IQ**.
 
   ![image49.png](Media/image49.png)
 
-1. [] Select **srch-foundry-iq-lab-@lab.LabInstance.Id** as the Connection, then select **foundry-lab-knowledgebase** and select **Connect**
+1. Select **srch-foundry-iq-lab-@lab.LabInstance.Id** as the Connection, then select **foundry-lab-knowledgebase** and select **Connect**
 
   ![image50.png](Media/image50.png)
 
-1. [] By default, **Web Search** is added. Select the three dots and **remove it** before proceeding.
+1. By default, **Web Search** is added. Select the three dots and **remove it** before proceeding.
 
-1. [] Review the connected **Foundry IQ knowledge base**, then select **Save** and select **⬅** to configure Foundry IQ knowledge base to another agent.
+1. Review the connected **Foundry IQ knowledge base**, then select **Save** and select **⬅** to configure Foundry IQ knowledge base to another agent.
 
   ![image51.png](Media/image51.png)
 
-1. [] Select **Sales-Associate-Agent**.
+1. Select **Sales-Associate-Agent**.
 
   ![image52.png](Media/image52.png)
 
-1. [] Select **Add** from the **Knowledge** dropdown, then select **Connect to Foundry IQ**.
+1. Select **Add** from the **Knowledge** dropdown, then select **Connect to Foundry IQ**.
 
   ![image53.png](Media/image53.png)
 
-1. [] Select **srch-foundry-iq-lab-@lab.LabInstance.Id** as the Connection, then select **foundry-lab-knowledgebase** and select **Connect**
+1. Select **srch-foundry-iq-lab-@lab.LabInstance.Id** as the Connection, then select **foundry-lab-knowledgebase** and select **Connect**
 
   ![image50.png](Media/image50.png)
 
-1. [] By default, **Web Search** is added. Select the three dots and **remove it** before proceeding.
+1. By default, **Web Search** is added. Select the three dots and **remove it** before proceeding.
 
-1. [] Review the connected **Foundry IQ knowledge base**, select **Save** and select the back arrow (**⬅**).
+1. Review the connected **Foundry IQ knowledge base**, select **Save** and select the back arrow (**⬅**).
 
 	![image54.png](Media/image54.png)
 
@@ -858,13 +858,13 @@ Miguel creates a **Supervisor Agent** capable of orchestrating insights across e
 
 Before you continue to configure the agents you must first copy some information from the Fabric Workspace.
 
-1. [] Swicth to your browser tab that has Fabric open or on a new tab open `app.fabric.microsoft.com`.
+1. Swicth to your browser tab that has Fabric open or on a new tab open `app.fabric.microsoft.com`.
 
-1. [] Select the Workspaces option and choose the **workspace61234584** workspace.
+1. Select the Workspaces option and choose the **workspace61234584** workspace.
 
-1. [] At the bottom of the page, select the **Retail_DataAgent_@lab.LabInstance.Id**
+1. At the bottom of the page, select the **Retail_DataAgent_@lab.LabInstance.Id**
 
-1. [] From the URL at the top of the browser, copy the following sections into the textboxes below:
+1. From the URL at the top of the browser, copy the following sections into the textboxes below:
 
   **Workspace ID** (The part of the URL after /groups/ and before the next /)
   @lab.TextBox(WorkspaceID)
@@ -881,29 +881,29 @@ Before you continue to configure the agents you must first copy some information
 
 #### Configure Tool
 
-1. [] Return to the **Foundry** tab in your browser.
+1. Return to the **Foundry** tab in your browser.
 
-1. [] Select **Inventory-Agent**.
+1. Select **Inventory-Agent**.
 
   ![image57.png](Media/image57.png)
 
-1. [] Under the Tools dropdown,Select **Add**, then select **Browse all tools**.
+1. Under the Tools dropdown,Select **Add**, then select **Browse all tools**.
 
   ![image58.png](Media/image58.png)
 
-1. [] Select **Fabric Data Agent**, then select **Add tool**.
+1. Select **Fabric Data Agent**, then select **Add tool**.
 
   ![image59.png](Media/image59.png)
 
-1. [] For the Workspace ID, enter `@lab.Variable(WorkspaceID)`
+1. For the Workspace ID, enter `@lab.Variable(WorkspaceID)`
 
-1. [] For the Artifact ID, enter `@lab.Variable(ArtifactID)`
+1. For the Artifact ID, enter `@lab.Variable(ArtifactID)`
 
-1. [] Select **Connect**.
+1. Select **Connect**.
 
-1. [] By default, **Web Search** is added. Select the three dots and **remove it** before proceeding.
+1. By default, **Web Search** is added. Select the three dots and **remove it** before proceeding.
 
-1. [] Review the connected **Foundry Data Agent** tool, select **Save** and select **⬅**.
+1. Review the connected **Foundry Data Agent** tool, select **Save** and select **⬅**.
 
   ![image61.png](Media/image61.png)
 
@@ -938,19 +938,19 @@ All agent interactions are orchestrated by the **Supervisor Agent** to ensure co
 
 ### Task 5.1: Configure multi-agent orchestrator and specialist agents
 
-1. [] Select **Workflows**.
+1. Select **Workflows**.
 
   ![image62.png](Media/image62.png)
 
-1. [] Select **Create** and then select **Blank workflow**.
+1. Select **Create** and then select **Blank workflow**.
 
   ![image63.png](Media/image63.png)
 
-1. [] Select **YAML**.
+1. Select **YAML**.
 
   ![image64.png](Media/image64.png)
 
-1. [] Paste the below following **YAML script** and select **Save**.
+1. Paste the below following **YAML script** and select **Save**.
 
     ```
     kind: workflow
@@ -1017,23 +1017,23 @@ All agent interactions are orchestrated by the **Supervisor Agent** to ensure co
     ```
   ![image65.png](Media/image65.png)
 
-1. [] Enter `FoundryIQ-Workflow` in the Workflow Name field and select **Save** button.
+1. Enter `FoundryIQ-Workflow` in the Workflow Name field and select **Save** button.
 
   ![image66.png](Media/image66.png)
 
-1. [] Review the **workflow**, select **Publish** dropdown, then select **Publish as workflow app**.
+1. Review the **workflow**, select **Publish** dropdown, then select **Publish as workflow app**.
 
     >[!Note] You may see the workflow in a **horizontal layout** by default. If you want to change it to vertical, select the Vertical Layout button.
 
   ![image67.png](Media/image67.png)
 
-1. [] Select the checkbox, then select **Publish**.
+1. Select the checkbox, then select **Publish**.
 
   ![image68.png](Media/image68.png)
 
     >[!Note] It might take few seconds to publish workflow in Foundry.
   
-1. [] The workflow published successfully. Select **Close**.
+1. The workflow published successfully. Select **Close**.
   
     ![image99.png](Media/image99.png)
 
@@ -1043,62 +1043,62 @@ All agent interactions are orchestrated by the **Supervisor Agent** to ensure co
 **Note:** This section demonstrates how individual agents are invoked and how they operate.
 Note: Before validating the workflow, test the individual agents and approve the tools. Tool approval cannot be completed within the workflow preview and may result in errors. Also, this feature is currently in preview.
 
-1. [] Select **Preview**.
+1. Select **Preview**.
 
   ![image69.png](Media/image69.png)
 
-1. [] Enter prompt `Hey! I'm planning to paint my living room but I'm not sure which color would look best. Can you recommend some paint shades?,` then select **Send button**.
+1. Enter prompt `Hey! I'm planning to paint my living room but I'm not sure which color would look best. Can you recommend some paint shades?,` then select **Send button**.
 
   ![image70.png](Media/image70.png)
 
     >[!Note] If prompted to approve the tool, select **Always approve all tools**
 		![96fk8k1d.png](Media/96fk8k1d.png)
 
-1. [] The **response** of the agents can be seen on the right side (See image pointer/box 1). You can also see the **called Agents** during the process on the right side and in the workflow (See image pointers/boxes 2 and 3).
+1. The **response** of the agents can be seen on the right side (See image pointer/box 1). You can also see the **called Agents** during the process on the right side and in the workflow (See image pointers/boxes 2 and 3).
 
     >[!Note] The response provides suitable paint shade recommendations for the living room along with brief descriptions. The expected outcome is to suggest relevant and aesthetically pleasing colors that help the user make an informed decision.
 
   ![image71.png](Media/image71.png)
 
-1. [] Enter prompt  `Can you tell me Joe's customer loyalty tier and discount?`, then select **Send button**.
+1. Enter prompt  `Can you tell me Joe's customer loyalty tier and discount?`, then select **Send button**.
 
   ![image72.png](Media/image72.png)
 
-1. [] The **response** of the agents can be seen on the right side (See image pointer/box 1). Note that we have received this response in JSON format.  You can also see the **called Agents** during the process on the right side and in  the workflow (See image pointers/boxes 2 and 3).
+1. The **response** of the agents can be seen on the right side (See image pointer/box 1). Note that we have received this response in JSON format.  You can also see the **called Agents** during the process on the right side and in  the workflow (See image pointers/boxes 2 and 3).
 
     >[!Note] The response displays Joe's loyalty details, including a personalized message and discount. The expected outcome is to identify Joe's loyalty tier as Platinum and return the 32.40% discount.
 
   ![image73.png](Media/image73.png)
 
-1. [] Enter prompt  `Which products are at risk of stockout, and how can we optimize inventory to avoid shortages?`, then select **Send button**.
+1. Enter prompt  `Which products are at risk of stockout, and how can we optimize inventory to avoid shortages?`, then select **Send button**.
 
   ![image74.png](Media/image74.png)
 
-1. [] The **response** of the agents can be seen on the right side (See image pointer/box 1).  You can also see the **called Agents** during the process on the right side and in  the workflow (See image pointers/boxes 2 and 3).
+1. The **response** of the agents can be seen on the right side (See image pointer/box 1).  You can also see the **called Agents** during the process on the right side and in  the workflow (See image pointers/boxes 2 and 3).
 
   ![image75.png](Media/image75.png)
 
-1. [] Enter prompt  `Which products are driving high return volumes that are impacting available inventory levels, and how should inventory planning be adjusted to minimize these returns?`    
+1. Enter prompt  `Which products are driving high return volumes that are impacting available inventory levels, and how should inventory planning be adjusted to minimize these returns?`    
 The **response** of the agents can be seen on the right side (See image pointer/box 1).  You can also see the **called Agents** during the process on the right side and in  the workflow (See image pointers/boxes 2 and 3).
 
   ![image100.png](Media/image100.png)
 
 ### Task 5.3: Inspect the execution path using the Trace tool
 
-1. [] In the Workflow page, select **Traces**, then select **Create or connect**.
+1. In the Workflow page, select **Traces**, then select **Create or connect**.
 **Note:** If you do not see the option to **create or connect** to Application Insights, ignore Steps 1 and 2, as Application Insights has already been connected.
 
   ![image76.png](Media/image76.png)
 
-1. [] Select the **foundryiq-appinsight** as Application insights resource name, then select **Connect**.
+1. Select the **foundryiq-appinsight** as Application insights resource name, then select **Connect**.
 
   ![image77.png](Media/image77.png)
 
-1. [] Review all the **details**
+1. Review all the **details**
 
   ![image78.png](Media/image78.png)
 
-1. [] Select any one of the **Conversation IDs**, to review the **agent** and **tool call**.  You can also review the **input**, **output**, and **metadata** for that conversation.
+1. Select any one of the **Conversation IDs**, to review the **agent** and **tool call**.  You can also review the **input**, **output**, and **metadata** for that conversation.
 
   ![image79.png](Media/image79.png)
 
@@ -1131,55 +1131,55 @@ To meet these requirements, Miguel enables the following capabilities:
 
 ### Task 6.1: Enforce guardrails and safety policies
 
-1. [] From the left pane, select **Guardrails** and then select **Create**.
+1. From the left pane, select **Guardrails** and then select **Create**.
 
     ![image80.png](Media/image80.png)
 
-1. [] Under the **Controls** section, select the **Risk Type** checkbox for the dropdowns : **Jailbreak**, **Content Safety**, and **Protected Materials**, then select **Next**.
+1. Under the **Controls** section, select the **Risk Type** checkbox for the dropdowns : **Jailbreak**, **Content Safety**, and **Protected Materials**, then select **Next**.
 
     ![image81.png](Media/image81.png)
 
-1. [] Under the **Select agents and models** section, select **Add agents**, select the **Name** checkbox to include all agents, then select **Save**.
+1. Under the **Select agents and models** section, select **Add agents**, select the **Name** checkbox to include all agents, then select **Save**.
 
     ![image82.png](Media/image82.png)
 
-1. [] Select **Next**.
+1. Select **Next**.
 
     ![image83.png](Media/image83.png)
 
-1. [] Under the **Review** section, paste `Guardrail11` as Guardrails name, Select **Submit**.
+1. Under the **Review** section, paste `Guardrail11` as Guardrails name, Select **Submit**.
 
     ![image84.png](Media/image84.png)
 
 ### Task 6.2: Define evaluation metrics and run offline/online assessments
 
-1. [] Select **Evaluations** and then select **Create**.
+1. Select **Evaluations** and then select **Create**.
 
     ![image85.png](Media/image85.png)
 
-1. [] Under the **Target: Agent** section, select the **Supervisor** agent, then select **Next**.
+1. Under the **Target: Agent** section, select the **Supervisor** agent, then select **Next**.
 
     ![image86.png](Media/image86.png)
 
-1. [] Under the **Data** section, select **Generate**. Leave other values as default and enter `10` for **Number of rows**, then select **Confirm**.
+1. Under the **Data** section, select **Generate**. Leave other values as default and enter `10` for **Number of rows**, then select **Confirm**.
 
     ![image87.png](Media/image87.png)
 
-1. [] Select **Next**.
+1. Select **Next**.
 
     ![image88.png](Media/image88.png)
 
-1. [] Under the **Criteria** section, select **Next**.
+1. Under the **Criteria** section, select **Next**.
 
     ![image89.png](Media/image89.png)
 
-1. [] Under the **Review** section, enter `eval-7gthxnri` as **Evaluation name** and select **Submit**.
+1. Under the **Review** section, enter `eval-7gthxnri` as **Evaluation name** and select **Submit**.
 
     ![image90.png](Media/image90.png)
 
     > **Note:** It might take a few seconds to load.
 
-1. [] Review the **Evaluation runs** and **Evaluators**.
+1. Review the **Evaluation runs** and **Evaluators**.
 
     ![image91.png](Media/image91.png)
 
